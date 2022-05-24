@@ -3,7 +3,7 @@
 This is the p1 project by Matthew Swaney and Romane Robb.
 
 # Description
-The purpose of this web application is to create and deliver a uniformed restaurant experience through an attractive user interface for our customers and an intuitive back-end for our admins. This repository is to for all of our back-end API files.
+The purpose of this web application is to create and deliver a uniformed restaurant experience through an attractive user interface (UI) for our customers, and an intuitive back-end for our admins. This repository is to for all of our back-end API files.
 
 # User Stories
 
