@@ -4,9 +4,12 @@ export default function Customer() {
 
 
 
-    return(
+    return (
+    
     <>
     
-    </>)
+    </>
+    
+    );
 
 }
