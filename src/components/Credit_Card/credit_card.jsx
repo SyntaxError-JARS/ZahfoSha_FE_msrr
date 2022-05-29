@@ -4,9 +4,13 @@ export default function Credit_Card() {
 
 
 
-    return(
-    <>
+    return (
     
-    </>)
+        <>
+        
+        </>
+        
+        );
+    
 
 }

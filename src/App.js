@@ -1,19 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import NavBar from "./components/navbar";
+import PokemonWelcome from "./components/pokemon-welcome";
+import TrainerDashboard from "./components/trainer-dashboard";
+import TrainerLogin from "./components/trainer-login";
+import TrainerRegister from "./components/trainer-register";
+import TrainerUpdate from "./components/trainer-update";
+import TrainerWelcome from "./components/trainer-welcome";
+
+export const userContext = createContext();
 
 function App() {
-  return (
-    <div className="App">
-<h1>ZahFoSha</h1>
-<h2>by Matthew Swaney and Romane Robb</h2>
-<p>This is the test page for our restaurant.</p>
-<p>We sell pizza and more.</p>
-<button>Place order</button>
-<button>Email us</button>
-<button>Register</button>
-<button>Order From Us</button>
-   </div>
-  );
+    const [user, setUser] = useState({ email: "Guest" });
+    // React-router-dom provideds us the ability to emulate multipage websites while still only being a single page
+    return (
+        <>
+            <BrowserRouter>
+                <userContext.Provider value={[user, setUser]}>
+                    <NavBar />
+                    <Routes>
+                        <Route path="login" element={<TrainerLogin />} />
+                        <Route path="register" element={<TrainerRegister />} />
+                        <Route exact path="" element={<TrainerWelcome />} />
+                        <Route path="pokemon" element={<PokemonWelcome />} />
+                        <Route path="dashboard" element={<TrainerDashboard></TrainerDashboard>} />
+                        <Route path="update" element={<TrainerUpdate></TrainerUpdate>} />
+                    </Routes>
+                </userContext.Provider>
+            </BrowserRouter>
+        </>
+    );
 }
 
 export default App;
