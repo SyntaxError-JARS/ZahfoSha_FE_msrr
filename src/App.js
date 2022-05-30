@@ -27,7 +27,7 @@ function App() {
                     <Routes>
                        <Route path="login" element={<menuwelcome />} />
                         <Route path="register" element={<order />} />
-                        <Route exact path="" element={<cre />} />
+                        <Route exact path="" element={<homepage />} />
                         <Route path="order" element={<order />} />
                         <Route path="menu" element={<menuwelcome></menuwelcome>} />
                         <Route path="update" element={<menuupdate></menuupdate>} />
