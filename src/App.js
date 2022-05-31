@@ -3,11 +3,13 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./components/navbar";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import CustomerRegistration from "./components/Customer";
-import CustomerLogin from "./components/Customer";
-import Order from "./components/Order";
-import MenuUpdate from "./components/Menu";
-import Menuwelcome from "./components/Menu";
+import CustomerRegistration from "./components/Customer/customerregistration";
+import CustomerLogin from "./components/Customer/customerlogin";
+import Order from "./components/Order/order";
+import MenuUpdate from "./components/Menu/menuupdate";
+import Menu from "./components/Menu/menu";
+import HomePage from "./components/homepage";
+import AdminLogin from "./components/Admin/adminlogin";
 
 export const userContext = createContext();
 
@@ -23,11 +25,12 @@ function App() {
                 <userContext.Provider value={[user, setUser]}>
                     <NavBar />
                     <Routes>
+                        <Route path="admin" element={<AdminLogin />} />
+                        <Route exact path="" element={<HomePage />} />
                        <Route path="login" element={<CustomerLogin />} />
                         <Route path="register" element={<CustomerRegistration />} />
-                        <Route exact path="" element={<homepage />} />
-                        <Route path="order" element={<Order />} />
-                        <Route path="menu" element={<Menuwelcome />} />
+                       <Route path="order" element={<Order />} />
+                        <Route path="menu" element={<Menu />} />
                         <Route path="update" element={<MenuUpdate />} />
                     </Routes>
                 </userContext.Provider>

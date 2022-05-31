@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import axios from "axios";
 
-export default function CustomerRegistration() {
+export default function AdminLogin() {
 
     const fnameInput = useRef();
     const lnameInput = useRef();
@@ -12,32 +12,32 @@ export default function CustomerRegistration() {
     // const isAdmin = false;
 
 
-    // const customer = {
+    // const admin = {
             
     //     fname: "Romane",
     //     lname: "Robb",
     //     username: "romanerobb",
     //     password: "passwordrobb",
     //     balance:  10,
-    //     isAdmin: false
+    //     isAdmin: true
     // }
 
     const url = "https://zahfosha.azurewebsites.net"
 
-    async function customerReg(){
+    async function AdminLogin(){
 
-        const customer = {
+        const admin = {
             
             fname: fnameInput.current.value,
             lname: lnameInput.current.value,
             username: usernameInput.current.value,
             password: passwordInput.current.value,
-            balance:  0,
-            isAdmin: false
+            balance:  200,
+            isAdmin: true
         }
         
         try{
-        const response = await axios.post(`${url}/customer/customerregistration` , customer)
+        const response = await axios.post(`${url}/admin/adminlogin` , admin)
         // balance = 0;
         // isAdmin = false;
         console.log(response)
@@ -50,7 +50,7 @@ export default function CustomerRegistration() {
     return(
         <>
         <h2>Welcome to Zahfosha!</h2>
-        <h2>Please Enter Your Customer Information Below To Sign Up!</h2>
+        <h2>Please Enter Your Admin Information Below To Log In!</h2>
         <br></br>
         <input placeholder="Enter First Name" ref={fnameInput}></input>
         <br></br>
@@ -60,8 +60,10 @@ export default function CustomerRegistration() {
         <br></br>
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>
         <br></br>
-        <button onClick={customerReg}>Register</button>
+        <button onClick={AdminLogin}>Login</button>
         </>
     )
+
+    
 
 }

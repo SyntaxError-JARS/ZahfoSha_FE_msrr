@@ -9,11 +9,11 @@ export default function NavBar() {
                 <button class="p-3 mb-2 bg-primary text-white">Home Page</button>
             </Link>
             <span> </span>
-            <Link to="/customerlogin">
+            <Link to="/login">
                 <button class="p-3 mb-2 bg-secondary text-white">Customer Login</button>
             </Link>
             <span> </span>
-            <Link to="/adminlogin">
+            <Link to="/admin">
                 <button class="p-3 mb-2 bg-success text-white">Admin Login</button>
             </Link>
             <span> </span>
