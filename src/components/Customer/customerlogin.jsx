@@ -60,7 +60,8 @@ export default function CustomerLogin() {
         <br></br>
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>
         <br></br>
-        <button onClick={CustomerLogin}>Log In!</button>
+        <br></br>
+        <button type="button" class="btn btn-outline-secondary" onClick={CustomerLogin}>Log In!</button>
         </>
     )
 }

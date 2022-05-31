@@ -60,7 +60,8 @@ export default function AdminLogin() {
         <br></br>
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>
         <br></br>
-        <button onClick={AdminLogin}>Login</button>
+        <br></br>
+        <button type="button" class="btn btn-outline-success" onClick={AdminLogin}>Login</button>
         </>
     )
 

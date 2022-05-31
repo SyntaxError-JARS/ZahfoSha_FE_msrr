@@ -19,7 +19,7 @@ function App() {
     return (
         <>
         <center>
-        <h1>ZahfoSha</h1>
+        <h1 class="display-1">ZahfoSha</h1>
         <h5>by Matthew Swaney and Romane Robb</h5>
             <BrowserRouter>
                 <userContext.Provider value={[user, setUser]}>
