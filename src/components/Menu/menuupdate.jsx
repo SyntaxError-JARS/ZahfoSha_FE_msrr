@@ -26,7 +26,7 @@ export default function MenuUpdate() {
 
     async function MenuUpdate(){
 
-        const customer = {
+        const menu = {
             
             fname: fnameInput.current.value,
             lname: lnameInput.current.value,
@@ -50,7 +50,7 @@ export default function MenuUpdate() {
     return(
         <>
         <h2>Welcome to Zahfosha!</h2>
-        <h2>Please Enter Your Customer Information Below To Log In!</h2>
+        <h2>Please Update The Menu Below!</h2>
         <br></br>
         <input placeholder="Enter First Name" ref={fnameInput}></input>
         <br></br>

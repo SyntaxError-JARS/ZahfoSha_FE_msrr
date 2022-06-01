@@ -1,67 +1,51 @@
 import React from "react";
-import { useRef } from "react";
 import axios from "axios";
+import { useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { userContext } from "../../App";
 
 export default function CustomerLogin() {
 
-    const fnameInput = useRef();
-    const lnameInput = useRef();
-    const usernameInput = useRef();
+    const emailInput = useRef();
     const passwordInput = useRef();
-    //const balanceInput = useRef();
-    // const isAdmin = false;
+    const [user, setUser] = useContext(userContext);
+    const navigate = useNavigate();
+    const url = "http://localhost:8080/Zah-fo'-Sha";
+    const isAdmin = false;
 
-
-    // const customer = {
-            
-    //     fname: "Romane",
-    //     lname: "Robb",
-    //     username: "romanerobb",
-    //     password: "passwordrobb",
-    //     balance:  10,
-    //     isAdmin: false
-    // }
-
-    const url = "http://localhost:8080/Zah-fo'-Sha/customer"
-
-    async function CustomerLogin(){
-
+    async function login() {
+        // Whenever you are getting a useRefs value, make sure it's inside some function call. Otherwise it will
+        // error due to the refInput.current = undefined, meaning there is no .value available
         const customer = {
-            
-            fname: fnameInput.current.value,
-            lname: lnameInput.current.value,
-            username: usernameInput.current.value,
+            email: emailInput.current.value,
             password: passwordInput.current.value,
-            balance:  0,
-            isAdmin: false
-        }
-        
-        try{
-        const response = await axios.post(`${url}/customer/customerlogin` , customer)
-        // balance = 0;
-        // isAdmin = false;
-        console.log(response)
-        } catch(error){
-            console.error(error.response.data)
-            console.log(error)
+        };
+
+        if (customer.password === "hello") {
+            alert("You need to reset your password");
+        } else {
+            try {
+                const response = await axios.post(`${url}/auth`, customer);
+                console.log(response.data);
+                console.log("Hey this is the customer prior ", user);
+                setUser({ ...user, email: customer.email });
+                console.log("This is after we set the customer ", user);
+                // the below code, manipulates the DOM
+                // window.location.replace("http://localhost:3000/dashboard");
+                navigate("/dashboard");
+            } catch (error) {
+                console.error(error.response.data);
+                alert(error.response.data);
+            }
         }
     }
 
-    return(
+    return (
         <>
-        <h2>Welcome to Zahfosha!</h2>
-        <h2>Please Enter Your Customer Information Below To Log In!</h2>
-        <br></br>
-        <input placeholder="Enter First Name" ref={fnameInput}></input>
-        <br></br>
-        <input placeholder="Enter Last Name" ref={lnameInput}></input>
-        <br></br>
-        <input placeholder="Enter Username" ref={usernameInput}></input>
-        <br></br>
-        <input type="password" placeholder="Enter password" ref={passwordInput}></input>
-        <br></br>
-        <br></br>
-        <button type="button" class="btn btn-outline-secondary" onClick={CustomerLogin}>Log In!</button>
+            <h4>Welcome back to ZahFoSha! Please log in below.</h4>
+            <input placeholder="Enter Customer Email" ref={emailInput}></input>
+            <input type="password" placeholder="Enter Customer Password" ref={passwordInput}></input>
+            <button onClick={login}>Login</button>
         </>
-    )
+    );
 }

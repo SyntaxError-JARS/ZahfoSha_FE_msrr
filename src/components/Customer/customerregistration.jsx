@@ -37,7 +37,7 @@ export default function CustomerRegistration() {
         }
         
         try{
-        const response = await axios.post(`${url}/customer/customerregistration` , customer)
+        const response = await axios.post(`${url}` , customer)
         // balance = 0;
         // isAdmin = false;
         console.log(response)
