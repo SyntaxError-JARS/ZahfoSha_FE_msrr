@@ -6,14 +6,14 @@ export default function DeleteCreditCard(){
 
     const usernameInput = useRef();
 
-    const url = "https://zahfosha.azurewebsites.net"
+    const url = "https://localhost:8080"
 
 
 
     async function deleteCreditCard(){
 
         const usernameIn = {
-            username: "sarahs"
+            username: "romanerobb"
         }
 
 
@@ -30,7 +30,7 @@ export default function DeleteCreditCard(){
 
     return(
         <>
-          <h3>Are you sure you want to delete your creditcard? If so please enter your username and hit the delete credit card button.</h3>
+          <h3>Are you sure you want to delete your credit card? If so please enter your username and hit the delete credit card button.</h3>
         <br></br>
         <br></br>
         <br></br>

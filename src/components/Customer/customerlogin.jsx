@@ -22,7 +22,7 @@ export default function CustomerLogin() {
     //     isAdmin: false
     // }
 
-    const url = "https://zahfosha.azurewebsites.net"
+    const url = "https://localhost:8080"
 
     async function CustomerLogin(){
 
