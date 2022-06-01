@@ -6,7 +6,7 @@ export default function DeleteCreditCard(){
 
     const usernameInput = useRef();
 
-    const url = "https://localhost:8080"
+    const url = "http://localhost:8080/Zah-fo'-Sha/CreditCard"
 
 
 

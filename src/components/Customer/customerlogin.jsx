@@ -22,7 +22,7 @@ export default function CustomerLogin() {
     //     isAdmin: false
     // }
 
-    const url = "https://localhost:8080"
+    const url = "http://localhost:8080/Zah-fo'-Sha/customer"
 
     async function CustomerLogin(){
 

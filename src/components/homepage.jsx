@@ -3,8 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default function HomePage() {
 
-
-
     return (
         <>
         <h1>Welcome To The #1 Pizza Shop In New York!</h1>

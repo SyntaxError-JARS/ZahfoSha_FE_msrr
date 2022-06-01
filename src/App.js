@@ -25,9 +25,9 @@ function App() {
                 <userContext.Provider value={[user, setUser]}>
                     <NavBar />
                     <Routes>
-                        <Route path="admin" element={<AdminLogin />} />
                         <Route exact path="" element={<HomePage />} />
-                       <Route path="login" element={<CustomerLogin />} />
+                        <Route path="admin" element={<AdminLogin />} />
+                        <Route path="login" element={<CustomerLogin />} />
                         <Route path="register" element={<CustomerRegistration />} />
                        <Route path="order" element={<Order />} />
                         <Route path="menu" element={<Menu />} />

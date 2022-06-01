@@ -32,7 +32,7 @@ export default function AdminLogin() {
             lname: lnameInput.current.value,
             username: usernameInput.current.value,
             password: passwordInput.current.value,
-            balance:  200,
+            balance:  1000,
             isAdmin: true
         }
         
