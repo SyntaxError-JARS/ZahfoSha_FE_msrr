@@ -6,7 +6,7 @@ export default function DeleteCreditCard(){
 
     const usernameInput = useRef();
 
-    const url = "http://localhost:8080/Zah-fo'-Sha/CreditCard"
+    const url = "https://zahfosha.azurewebsites.net"
 
 
 
@@ -18,7 +18,7 @@ export default function DeleteCreditCard(){
 
 
         try{
-            const response = await axios.delete((`${url}/Credit/delete` , usernameIn ))
+            const response = await axios.delete((`${url}/creditCard` , usernameIn ))
             console.log(response)
             console.log(response.data)
         }catch (error){

@@ -11,7 +11,7 @@ export default function OrderCreate() {
     const orderDateInput = useRef();
     const usernameInput = useRef();
 
-    const url = "http://localhost:8080/Zah-fo'-Sha/customer"
+    const url = "https://zahfosha.azurewebsites.net/"
 
     async function addOrder(){
 
@@ -26,7 +26,7 @@ export default function OrderCreate() {
 
 
         try{
-            const response = await axios.post(`${url}/order/createorder` , order )
+            const response = await axios.post(`${url}/orders` , order )
             console.log(response)
             console.log(response.data)
         }catch(error){
@@ -41,21 +41,20 @@ export default function OrderCreate() {
 <>
         <h3>Welcome, Please Enter Your Order Below!</h3>
         <br></br>
-        <br></br>
-        <br></br>
         <input placeholder="Enter ID" ref={idInput}></input>
         <br></br>
-        <input placeholder="Enter Menu Item" ref={menuItemInput}></input>
+        <input placeholder="Enter The Menu Item" ref={menuItemInput}></input>
         <br></br>
-        <input placeholder="Enter A Comment" ref={commentInput}></input>
+        <input placeholder="Please Enter A Comment" ref={commentInput}></input>
         <br></br>
-        <input  placeholder="Favorite Item" ref={isFavoriteInput}></input>
+        <input  placeholder="Is This A Favorite Item?" ref={isFavoriteInput}></input>
         <br></br>
-        <input  placeholder="Date" ref={orderDateInput}></input>
+        <input  placeholder="Enter Today's Date" ref={orderDateInput}></input>
         <br></br>
-        <input  placeholder="Username" ref={usernameInput}></input>
+        <input  placeholder="Please Enter Your Username" ref={usernameInput}></input>
         <br></br>
-        <button onClick={addOrder}>Create Order</button>
+        <br></br>
+        <button class="btn btn-secondary btn-lg" onClick={addOrder}>Create Order</button>
         </>
     );
 }

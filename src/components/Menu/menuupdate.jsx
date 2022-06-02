@@ -22,7 +22,7 @@ export default function MenuUpdate() {
     //     isAdmin: false
     // }
 
-    const url = "http://localhost:8080/Zah-fo'-Sha/menu"
+    const url = "https://zahfosha.azurewebsites.net"
 
     async function MenuUpdate(){
 
@@ -37,7 +37,7 @@ export default function MenuUpdate() {
         }
         
         try{
-        const response = await axios.post(`${url}/menu/menuupdate` , menu)
+        const response = await axios.post(`${url}/menu` , menu)
         // balance = 0;
         // isAdmin = false;
         console.log(response)

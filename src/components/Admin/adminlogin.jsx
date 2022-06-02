@@ -54,9 +54,12 @@ export default function AdminLogin() {
         <br></br>
         <input placeholder="Enter First Name" ref={fnameInput}></input>
         <br></br>
+        <br></br>
         <input placeholder="Enter Last Name" ref={lnameInput}></input>
         <br></br>
+        <br></br>
         <input placeholder="Enter Username" ref={usernameInput}></input>
+        <br></br>
         <br></br>
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>
         <br></br>

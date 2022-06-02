@@ -13,12 +13,12 @@ export default function NavBar() {
                 <button class="p-3 mb-2 bg-secondary text-white">Customer Login</button>
             </Link>
             <span> </span>
-            <Link to="/admin">
-                <button class="p-3 mb-2 bg-success text-white">Admin Login</button>
+            <Link to="/register">
+                <button class="p-3 mb-2 bg-warning text-dark">Customer Sign up</button>
             </Link>
             <span> </span>
-            <Link to="/register">
-                <button class="p-3 mb-2 bg-warning text-dark">Sign up</button>
+            <Link to="/admin">
+                <button class="p-3 mb-2 bg-success text-white">Admin Login</button>
             </Link>
             <span> </span>
             <Link to="/menu">

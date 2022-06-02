@@ -22,22 +22,22 @@ export default function CustomerRegistration() {
     //     isAdmin: false
     // }
 
-    const url = "http://localhost:8080/Zah-fo'-Sha/customer"
+    const url = "https://zahfosha.azurewebsites.net"
 
     async function customerReg(){
 
         const customer = {
             
+            username: usernameInput.current.value,
             fname: fnameInput.current.value,
             lname: lnameInput.current.value,
-            username: usernameInput.current.value,
             password: passwordInput.current.value,
-            balance:  0,
+            balance:  20,
             isAdmin: false
         }
         
         try{
-        const response = await axios.post(`${url}` , customer)
+        const response = await axios.post(`${url}/customer` , customer)
         // balance = 0;
         // isAdmin = false;
         console.log(response)
@@ -52,11 +52,14 @@ export default function CustomerRegistration() {
         <h2>Welcome to Zahfosha!</h2>
         <h2>Please Enter Your Customer Information Below To Sign Up!</h2>
         <br></br>
+        <input placeholder="Enter Username" ref={usernameInput}></input>
+        <br></br>
+        <br></br>
         <input placeholder="Enter First Name" ref={fnameInput}></input>
+        <br></br>
         <br></br>
         <input placeholder="Enter Last Name" ref={lnameInput}></input>
         <br></br>
-        <input placeholder="Enter Username" ref={usernameInput}></input>
         <br></br>
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>
         <br></br>

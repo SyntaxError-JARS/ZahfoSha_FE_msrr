@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import React from "react";
 import CustomerLogin from "../Customer/customerlogin";
 import Counter from "../Order/counter";
+import CreateOrder from "../Order/createorder"
 
 export default function Menu() {
 
@@ -9,6 +10,7 @@ export default function Menu() {
     
         <>
         <h1>Please take a look at our menu below!</h1>
+        <CreateOrder />
 
         <h2>Cheese Pizza</h2>
         <h3>$20.00</h3>
