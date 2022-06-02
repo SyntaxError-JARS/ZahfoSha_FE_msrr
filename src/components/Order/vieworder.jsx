@@ -11,7 +11,7 @@ export default function ViewOrder() {
     async function viewAllOrders(){
 
         try{
-        const response = await axios.get(`${url}/orders`)
+        const response = await axios.get(`${url}/orders`, orderBody)
         const orders = await response.data;
         const menuItemsTableRows = orders.map((e) => {
             return (
@@ -39,7 +39,7 @@ export default function ViewOrder() {
      
         <h3>Here Are Your Orders</h3>
                 
-        <button onClick={viewAllOrders}>Click To Find All Your Orders</button>
+        <button class="btn btn-warning btn-lg" onClick={viewAllOrders}>Click To Find All Your Orders</button>
     
         <table>
             <thead>

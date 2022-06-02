@@ -64,7 +64,7 @@ export default function CustomerRegistration() {
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>
         <br></br>
         <br></br>
-        <button type="button" class="btn btn-outline-warning" onClick={customerReg}>Register</button>
+        <button type="button" class="btn btn-outline-warning btn-lg" onClick={customerReg}>Register</button>
         </>
     )
 

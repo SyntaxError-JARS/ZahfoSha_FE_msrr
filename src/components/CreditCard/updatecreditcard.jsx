@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function UpdateCredit_Card() {
+export default function UpdateCreditCard() {
 
 
     return (

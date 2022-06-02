@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useContext, useRef } from "react";
 
-export default function OrderCreate() {
+export default function CreateOrder() {
 
     const idInput = useRef();
     const menuItemInput = useRef();

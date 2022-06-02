@@ -5,7 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { userContext } from "../../App";
 import ViewOrder from "../Order/vieworder";
 import bootstrap from "bootstrap";
-import Credit_Card from "../Credit_Card/credit_card";
+import AddCreditCard from "../CreditCard/addcreditcard";
+import DeleteCreditCard from "../CreditCard/deletecreditcard";
 
 export default function CustomerLogin() {
 
@@ -48,14 +49,14 @@ export default function CustomerLogin() {
             <h4>Welcome back to ZahFoSha! Please log in below.</h4>
             <input placeholder="Enter Your Customer Username" ref={UsernameInput}></input>
             <br></br>
-            <br></br>
             <input type="password" placeholder="Enter Your Password" ref={passwordInput}></input>
             <br></br>
             <br></br>
-            <button class="btn btn-outline-primary" onClick={login}>Login</button>
+            <button class="btn btn-outline-primary btn-lg" onClick={login}>Login</button>
 
             <ViewOrder />
-            <Credit_Card />
+            <AddCreditCard />
+            <DeleteCreditCard />
         </>
     );
 }

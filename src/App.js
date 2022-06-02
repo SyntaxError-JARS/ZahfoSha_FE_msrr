@@ -5,12 +5,14 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import CustomerRegistration from "./components/Customer/customerregistration";
 import CustomerLogin from "./components/Customer/customerlogin";
-import Order from "./components/Order/order";
 import MenuUpdate from "./components/Menu/menuupdate";
 import Menu from "./components/Menu/menu";
 import HomePage from "./components/homepage";
 import AdminLogin from "./components/Admin/adminlogin";
-import OrderCreate from "./components/Order/createorder";
+import CreateOrder from "./components/Order/createorder";
+import DeleteCreditCard from "./components/CreditCard/deletecreditcard";
+import UpdateCreditCard from "./components/CreditCard/updatecreditcard";
+import AddCreditCard from "./components/CreditCard/addcreditcard";
 
 export const userContext = createContext();
 
@@ -30,9 +32,12 @@ function App() {
                         <Route path="admin" element={<AdminLogin />} />
                         <Route path="login" element={<CustomerLogin />} />
                         <Route path="register" element={<CustomerRegistration />} />
-                       <Route path="order" element={<Order />} />
+                        <Route path="order" element={<CreateOrder />} />
                         <Route path="menu" element={<Menu />} />
                         <Route path="update" element={<MenuUpdate />} />
+                        <Route path="addcreditcard" element={<AddCreditCard />} />
+                        <Route path="updatecreditcard" element={<UpdateCreditCard />} />
+                        <Route path="deletecreditcard" element={<DeleteCreditCard />} />
                     </Routes>
                 </userContext.Provider>
             </BrowserRouter>

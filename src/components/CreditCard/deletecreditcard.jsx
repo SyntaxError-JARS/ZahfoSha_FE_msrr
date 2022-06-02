@@ -30,13 +30,11 @@ export default function DeleteCreditCard(){
 
     return(
         <>
-          <h3>Are you sure you want to delete your credit card? If so please enter your username and hit the delete credit card button.</h3>
-        <br></br>
-        <br></br>
-        <br></br>
+          <h3>Delete Your Credit Card!</h3>
         <input placeholder="Enter your username" ref={usernameInput}></input>
         <br></br>
-        <button onClick={deleteCreditCard}>Delete CreditCard</button>
+        <br></br>
+        <button class="btn btn-danger btn-lg" onClick={deleteCreditCard}>Delete Credit Card</button>
         </>
 
     )
