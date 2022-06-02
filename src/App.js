@@ -13,6 +13,8 @@ import CreateOrder from "./components/Order/createorder";
 import DeleteCreditCard from "./components/CreditCard/deletecreditcard";
 import UpdateCreditCard from "./components/CreditCard/updatecreditcard";
 import AddCreditCard from "./components/CreditCard/addcreditcard";
+import Customer from "./components/Customer/customer";
+import Contact from "./components/contact";
 
 export const userContext = createContext();
 
@@ -23,6 +25,7 @@ function App() {
         <>
         <center>
         <h1 class="display-1">ZahfoSha</h1>
+
         <h5>by Matthew Swaney and Romane Robb</h5>
             <BrowserRouter>
                 <userContext.Provider value={[user, setUser]}>
@@ -31,6 +34,7 @@ function App() {
                         <Route exact path="" element={<HomePage />} />
                         <Route path="admin" element={<AdminLogin />} />
                         <Route path="login" element={<CustomerLogin />} />
+                        <Route path="customer" element={<Customer />} />
                         <Route path="register" element={<CustomerRegistration />} />
                         <Route path="order" element={<CreateOrder />} />
                         <Route path="menu" element={<Menu />} />
@@ -38,6 +42,7 @@ function App() {
                         <Route path="addcreditcard" element={<AddCreditCard />} />
                         <Route path="updatecreditcard" element={<UpdateCreditCard />} />
                         <Route path="deletecreditcard" element={<DeleteCreditCard />} />
+                        <Route path="contact" element={<Contact />} />
                     </Routes>
                 </userContext.Provider>
             </BrowserRouter>

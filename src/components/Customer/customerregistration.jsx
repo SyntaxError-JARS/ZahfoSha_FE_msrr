@@ -1,8 +1,10 @@
 import React from "react";
 import { useRef } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function CustomerRegistration() {
+    const navigate = useNavigate();
 
     const fnameInput = useRef();
     const lnameInput = useRef();
@@ -32,9 +34,10 @@ export default function CustomerRegistration() {
             fname: fnameInput.current.value,
             lname: lnameInput.current.value,
             password: passwordInput.current.value,
-            balance:  20,
+            balance: 0,
             isAdmin: false
         }
+        navigate("/customer");
         
         try{
         const response = await axios.post(`${url}/customer` , customer)
@@ -50,7 +53,7 @@ export default function CustomerRegistration() {
     return(
         <>
         <h2>Welcome to Zahfosha!</h2>
-        <h2>Please Enter Your Customer Information Below To Sign Up!</h2>
+        <h2>Please enter your customer information below to sign up!</h2>
         <br></br>
         <input placeholder="Enter Username" ref={usernameInput}></input>
         <br></br>

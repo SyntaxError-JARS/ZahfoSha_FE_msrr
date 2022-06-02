@@ -36,9 +36,6 @@ export default function ViewOrder() {
 
     return(
         <>
-     
-        <h3>Here Are Your Orders</h3>
-                
         <button class="btn btn-warning btn-lg" onClick={viewAllOrders}>Click To Find All Your Orders</button>
     
         <table>

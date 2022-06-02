@@ -7,10 +7,11 @@ import ViewOrder from "../Order/vieworder";
 import bootstrap from "bootstrap";
 import AddCreditCard from "../CreditCard/addcreditcard";
 import DeleteCreditCard from "../CreditCard/deletecreditcard";
+import Customer from "./customer";
 
 export default function CustomerLogin() {
 
-    const UsernameInput = useRef();
+    const usernameInput = useRef();
     const passwordInput = useRef();
     const [user, setUser] = useContext(userContext);
     const navigate = useNavigate();
@@ -21,22 +22,22 @@ export default function CustomerLogin() {
         // Whenever you are getting a useRefs value, make sure it's inside some function call. Otherwise it will
         // error due to the refInput.current = undefined, meaning there is no .value available
         const customer = {
-            username: UsernameInput.current.value,
+            username: usernameInput.current.value,
             password: passwordInput.current.value,
         };
 
-        if (customer.password === "hello") {
-            alert("You need to reset your password");
+        if (customer.password === "admin") {
+            navigate("/admin");
         } else {
             try {
-                const response = await axios.post(`${url}/customer`, customer);
+                const response = await axios.post(`${url}/auth`, customer);
                 console.log(response.data);
-                console.log("Hey this is the customer prior ", user);
-                setUser({ ...user, username: customer.username });
-                console.log("This is after we set the customer ", user);
+                // console.log("Hey this is the customer prior ", user);
+                // setUser({ ...user, username: customer.username });
+                // console.log("This is after we set the customer ", user);
                 // the below code, manipulates the DOM
                 // window.location.replace("http://localhost:3000/dashboard");
-                navigate("/dashboard");
+                navigate("/customer");
             } catch (error) {
                 console.error(error.response.data);
                 alert(error.response.data);
@@ -46,17 +47,15 @@ export default function CustomerLogin() {
 
     return (
         <>
-            <h4>Welcome back to ZahFoSha! Please log in below.</h4>
-            <input placeholder="Enter Your Customer Username" ref={UsernameInput}></input>
+            <h2>Welcome back to Zahfosha!<br></br> Please log in below.</h2>
+            <br></br>
+            <input placeholder="Enter Your Customer Username" ref={usernameInput}></input>
+            <br></br>
             <br></br>
             <input type="password" placeholder="Enter Your Password" ref={passwordInput}></input>
             <br></br>
             <br></br>
             <button class="btn btn-outline-primary btn-lg" onClick={login}>Login</button>
-
-            <ViewOrder />
-            <AddCreditCard />
-            <DeleteCreditCard />
         </>
     );
 }

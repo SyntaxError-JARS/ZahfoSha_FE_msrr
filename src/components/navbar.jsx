@@ -10,19 +10,19 @@ export default function NavBar() {
             </Link>
             <span> </span>
             <Link to="/login">
-                <button class="p-3 mb-2 bg-secondary text-white">Customer Login</button>
+                <button class="p-3 mb-2 bg-secondary text-white">Login</button>
             </Link>
             <span> </span>
             <Link to="/register">
-                <button class="p-3 mb-2 bg-warning text-dark">Customer Sign up</button>
-            </Link>
-            <span> </span>
-            <Link to="/admin">
-                <button class="p-3 mb-2 bg-success text-white">Admin Login</button>
+                <button class="p-3 mb-2 bg-warning text-dark">Sign up</button>
             </Link>
             <span> </span>
             <Link to="/menu">
-                <button class="p-3 mb-2 bg-dark text-white">See Our Menu</button>
+                <button class="p-3 mb-2 bg-dark text-white">Our Menu/Order</button>
+            </Link>
+            <span> </span>
+            <Link to="/contact">
+                <button class="p-3 mb-2 bg-success text-white">Contact Us</button>
             </Link>
         </nav>
     );
