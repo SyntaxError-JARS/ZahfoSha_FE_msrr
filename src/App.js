@@ -8,7 +8,7 @@ import CustomerLogin from "./components/Customer/customerlogin";
 import MenuUpdate from "./components/Menu/menuupdate";
 import Menu from "./components/Menu/menu";
 import HomePage from "./components/homepage";
-import AdminLogin from "./components/Admin/adminlogin";
+import Admin from "./components/Admin/admin";
 import CreateOrder from "./components/Order/createorder";
 import DeleteCreditCard from "./components/CreditCard/deletecreditcard";
 import UpdateCreditCard from "./components/CreditCard/updatecreditcard";
@@ -32,7 +32,7 @@ function App() {
                     <NavBar />
                     <Routes>
                         <Route exact path="" element={<HomePage />} />
-                        <Route path="admin" element={<AdminLogin />} />
+                        <Route path="admin" element={<Admin />} />
                         <Route path="login" element={<CustomerLogin />} />
                         <Route path="customer" element={<Customer />} />
                         <Route path="register" element={<CustomerRegistration />} />

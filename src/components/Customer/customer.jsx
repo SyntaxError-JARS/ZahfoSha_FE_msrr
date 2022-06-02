@@ -2,6 +2,7 @@ import React from "react";
 import AddCreditCard from "../CreditCard/addcreditcard";
 import DeleteCreditCard from "../CreditCard/deletecreditcard";
 import ViewOrder from "../Order/vieworder";
+import CustomerDelete from "./customerdelete";
 
 export default function Customer() {
 
@@ -13,6 +14,7 @@ export default function Customer() {
         <ViewOrder />
         <AddCreditCard />
         <DeleteCreditCard />
+        <CustomerDelete />
     </>
     
     );
