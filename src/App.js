@@ -15,6 +15,7 @@ import UpdateCreditCard from "./components/CreditCard/updatecreditcard";
 import AddCreditCard from "./components/CreditCard/addcreditcard";
 import Customer from "./components/Customer/customer";
 import Contact from "./components/contact";
+import Footer from "./components/footer";
 
 export const userContext = createContext();
 
@@ -24,8 +25,9 @@ function App() {
     return (
         <>
         <center>
-        <h1 class="display-1">ZahfoSha</h1>
 
+        {/* <h1 class="display-1">ZahfoSha</h1> */}
+        <img src="https://i.ibb.co/LPFYKXB/Brown-Illustrative-Pizza-Slice-Logo.png" width="500" height="325" alt = "ZahfoSha"></img>
         <h5>by Matthew Swaney and Romane Robb</h5>
             <BrowserRouter>
                 <userContext.Provider value={[user, setUser]}>
@@ -44,6 +46,7 @@ function App() {
                         <Route path="deletecreditcard" element={<DeleteCreditCard />} />
                         <Route path="contact" element={<Contact />} />
                     </Routes>
+                    <Footer />
                 </userContext.Provider>
             </BrowserRouter>
             </center>

@@ -16,12 +16,12 @@ export default function ViewOrder() {
         const menuItemsTableRows = orders.map((e) => {
             return (
                 <tr>
+                    <td>{e.username}</td>
                     <td>{e.id}</td>
                     <td>{e.menuItem}</td>
                     <td>{e.comment}</td>
                     <td>{String(e.isFavorite)}</td>
                     <td>{e.orderDate}</td>
-                    <td>{e.username}</td>
                 </tr>
             )
            
@@ -37,21 +37,21 @@ export default function ViewOrder() {
     return(
         <>
         <button class="btn btn-warning btn-lg" onClick={viewAllOrders}>Click To Find All Your Orders</button>
-    
-        <table>
-            <thead>
+    <center>
+        <table class="table">
+            <thead class="thead-dark">
                 <tr>
-                    <th>Order Id</th>
-                    <th>Menu Item</th>
-                    <th>Comment</th>
-                    <th>isFavorite</th>
-                    <th>Order Date</th>
-                    <th>Username</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Order Id</th>
+                    <th scope="col">Menu Item</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">isFavorite</th>
+                    <th scope="col">Order Date</th>
                 </tr>
             </thead>
             <tbody>{orderBody}</tbody>
         </table>
-
+    </center>
         </>
     )
 }
