@@ -25,7 +25,6 @@ function App() {
     return (
         <>
         <center>
-
         {/* <h1 class="display-1">ZahfoSha</h1> */}
         <img src="https://i.ibb.co/LPFYKXB/Brown-Illustrative-Pizza-Slice-Logo.png" width="500" height="325" alt = "ZahfoSha"></img>
         <h5>by Matthew Swaney and Romane Robb</h5>

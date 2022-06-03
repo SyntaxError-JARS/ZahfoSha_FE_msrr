@@ -43,7 +43,7 @@ export default function CreateMenuItem() {
         <input placeholder="How much does it cost?" ref={costInput}></input>
         <br></br>
         <br></br>
-        <input  placeholder="How much protein does it contain?" ref={proteinInput}></input>
+        <input  placeholder="How much protein (in grams) does it contain?" ref={proteinInput}></input>
         <br></br>
         <br></br>
         <input placeholder="Can the item be substitutable?" ref={isSubstitutableInput}></input>
