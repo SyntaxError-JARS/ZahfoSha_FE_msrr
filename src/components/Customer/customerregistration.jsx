@@ -37,7 +37,12 @@ export default function CustomerRegistration() {
             balance: 0,
             isAdmin: false
         }
-        navigate("/customer");
+
+        if (customer.password === "") {
+            alert("You have failed to enter a valid password! Please try again!");
+        if (customer.username === "")
+            alert("You have failed to enter a valid username! Please try again!");
+        }else navigate("/customer");
         
         try{
         const response = await axios.post(`${url}/customer` , customer)
@@ -71,4 +76,4 @@ export default function CustomerRegistration() {
         </>
     )
 
-}
+    }

@@ -27,7 +27,7 @@ export default function CustomerLogin() {
         };
 
         if (customer.password === "admin") {
-            navigate("/admin");
+                navigate("/admin");
         } else {
             try {
                 const response = await axios.post(`${url}/auth`, customer);
@@ -38,9 +38,9 @@ export default function CustomerLogin() {
                 // the below code, manipulates the DOM
                 // window.location.replace("http://localhost:3000/dashboard");
                 navigate("/customer");
-            } catch (error) {
-                console.error(error.response.data);
-                alert(error.response.data);
+        } catch (error) {
+            console.error(error.response.data);
+            alert(error.response.data);
             }
         }
     }

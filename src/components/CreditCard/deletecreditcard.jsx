@@ -33,7 +33,7 @@ export default function DeleteCreditCard(){
         <br></br>
         <button class="btn btn-danger btn-lg" onClick={() => { 
             deleteCreditCard(); 
-            setShowDeleted(!showDelete) 
+            setShowDeleted(!showDelete)
             }}
             >Delete Credit Card</button>
         {showDelete && <p>You Have Successfully Deleted Your Credit Card</p>}

@@ -12,7 +12,7 @@ export default function CustomerDelete() {
     async function deleteCustomer(){
 
         try{
-            const response = await axios.delete(`${url}/Credit/delete-card?cardNumber=${customerInput.current.value}` )
+            const response = await axios.delete(`${url}/customer/delete-account?username=${customerInput.current.value}` )
 
             console.log(response)
             console.log(response.data)
@@ -28,7 +28,7 @@ export default function CustomerDelete() {
         <br></br>
         <br></br>
         <h3>Delete Your Account!</h3>
-        <input placeholder="Enter your username" ref={customerInput}></input>
+        <input placeholder="Please enter your username" ref={customerInput}></input>
         <br></br>
         <br></br>
         <button class="btn btn-danger btn-lg" onClick={() => { 

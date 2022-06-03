@@ -38,7 +38,7 @@ export default function ViewOrder() {
         <>
         <button class="btn btn-warning btn-lg" onClick={viewAllOrders}>Click To Find All Your Orders</button>
     <center>
-        <table class="table">
+        <table class>
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">Order Id</th>
