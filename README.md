@@ -36,3 +36,4 @@ The purpose of this web application is to create and deliver a uniformed restaur
 -   [ ] Java EE Servlet API (v4.0+)
 -   [ ] Azure SQL
 -   [ ] Git SCM (on GitHub)
+-   [ ] ReactJS

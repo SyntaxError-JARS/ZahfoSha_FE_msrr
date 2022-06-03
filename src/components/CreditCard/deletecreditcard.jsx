@@ -11,6 +11,9 @@ export default function DeleteCreditCard(){
 
     async function deleteCreditCard(){
 
+        // if (creditCardInput === "") {
+        //     alert("You have failed to enter a valid credit card number! Please try again!");
+
         try{
             const response = await axios.delete(`${url}/Credit/delete-card?cardNumber=${creditCardInput.current.value}` )
 

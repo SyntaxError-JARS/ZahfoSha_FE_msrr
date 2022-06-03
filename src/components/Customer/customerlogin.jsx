@@ -26,6 +26,12 @@ export default function CustomerLogin() {
             password: passwordInput.current.value,
         };
 
+        if (customer.username === "") {
+            alert("You need to enter a username!");
+        }
+        if (customer.password === "") {
+            alert("You need to enter a password!");
+        }
         if (customer.password === "admin") {
                 navigate("/admin");
         } else {

@@ -20,7 +20,9 @@ export default function CreateMenuItem() {
             isSubstitutable: isSubstitutableInput.current.value,
         }
 
-
+        if (menuItem.menuItem === "") {
+            alert("You need to enter a menu item!");
+        }
         try{
             const response = await axios.post(`${url}/menu/createmenuitem` , menuItem )
             console.log(response)
