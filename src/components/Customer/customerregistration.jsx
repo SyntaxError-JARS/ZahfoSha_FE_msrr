@@ -23,8 +23,8 @@ export default function CustomerRegistration() {
     const fNameInput = useRef();
     const lNameInput = useRef();
     const passwordInput = useRef();
-    //const balanceInput = useRef();
-    // const isAdmin = false;
+    const balanceInput = useRef();
+    const isAdminInput = useRef();
 
     async function customerReg(){
 
@@ -34,8 +34,8 @@ export default function CustomerRegistration() {
             fName: fNameInput.current.value,
             lName: lNameInput.current.value,
             password: passwordInput.current.value,
-            balance: 0,
-            isAdmin: false
+            balance: balanceInput.current.value,
+            isAdmin: isAdminInput.current.value
         }
 
         if (customer.password === "") {
@@ -69,6 +69,12 @@ export default function CustomerRegistration() {
             <br></br>
             <br></br>
             <input type="password" placeholder="Enter password" ref={passwordInput}></input>
+            <br></br>
+            <br></br>
+            <input type="password" placeholder="Enter balance" ref={balanceInput}></input>
+            <br></br>
+            <br></br>
+            <input type="password" placeholder="isAdmin" ref={isAdminInput}></input>
             <br></br>
             <br></br>
             <button type="button" class="btn btn-outline-warning btn-lg display-1" onClick={customerReg}>Register</button>
