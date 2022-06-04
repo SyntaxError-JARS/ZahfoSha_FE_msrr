@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 export default function CustomerUpdate() {
     const navigate = useNavigate();
 
-    const fnameInput = useRef();
-    const lnameInput = useRef();
-    const usernameInput = useRef();
+    const customerUsernameInput = useRef();
+    const fNameInput = useRef();
+    const lNameInput = useRef();
     const passwordInput = useRef();
     //const balanceInput = useRef();
     // const isAdmin = false;
@@ -16,9 +16,9 @@ export default function CustomerUpdate() {
 
     // const customer = {
             
-    //     fname: "Romane",
-    //     lname: "Robb",
-    //     username: "romanerobb",
+    //     fName: "Romane",
+    //     lName: "Robb",
+    //     customerUsername: "romanerobb",
     //     password: "passwordrobb",
     //     balance:  10,
     //     isAdmin: false
@@ -30,9 +30,9 @@ export default function CustomerUpdate() {
 
         const customer = {
             
-            username: usernameInput.current.value,
-            fname: fnameInput.current.value,
-            lname: lnameInput.current.value,
+            customerUsername: customerUsernameInput.current.value,
+            fName: fNameInput.current.value,
+            lName: lNameInput.current.value,
             password: passwordInput.current.value,
             balance: 0,
             isAdmin: false
@@ -40,7 +40,7 @@ export default function CustomerUpdate() {
 
         if (customer.password === "") {
             alert("You have failed to enter a valid password! Please try again!");
-        if (customer.username === "")
+        if (customer.customerUsername === "")
             alert("You have failed to enter a valid username! Please try again!");
         }else navigate("/customer");
         
@@ -60,13 +60,13 @@ export default function CustomerUpdate() {
         <h2>Welcome to Zahfosha!</h2>
         <h2>Update your customer information below!</h2>
         <br></br>
-        <input placeholder="Enter Username" ref={usernameInput}></input>
+        <input placeholder="Enter Username" ref={customerUsernameInput}></input>
         <br></br>
         <br></br>
-        <input placeholder="Enter First Name" ref={fnameInput}></input>
+        <input placeholder="Enter First Name" ref={fNameInput}></input>
         <br></br>
         <br></br>
-        <input placeholder="Enter Last Name" ref={lnameInput}></input>
+        <input placeholder="Enter Last Name" ref={lNameInput}></input>
         <br></br>
         <br></br>
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>

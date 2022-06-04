@@ -11,7 +11,7 @@ import Customer from "./customer";
 
 export default function CustomerLogin() {
 
-    const usernameInput = useRef();
+    const customerUsernameInput = useRef();
     const passwordInput = useRef();
     const [user, setUser] = useContext(userContext);
     const navigate = useNavigate();
@@ -22,11 +22,11 @@ export default function CustomerLogin() {
         // Whenever you are getting a useRefs value, make sure it's inside some function call. Otherwise it will
         // error due to the refInput.current = undefined, meaning there is no .value available
         const customer = {
-            username: usernameInput.current.value,
+            customerUsername: customerUsernameInput.current.value,
             password: passwordInput.current.value,
         };
 
-        if (customer.username === "") {
+        if (customer.customerUsername === "") {
             alert("You need to enter a username!");
         }
         if (customer.password === "") {
@@ -56,13 +56,13 @@ export default function CustomerLogin() {
             <h2>Welcome back to Zahfosha!<br></br> Please log in below.</h2>
             <h4><a href="#" class="text-white bg-dark">Use your admin password to log in as an admin!</a></h4>
             <br></br>
-            <input placeholder="Enter Your Customer Username" ref={usernameInput}></input>
+            <input placeholder="Enter Your Customer Username" ref={customerUsernameInput}></input>
             <br></br>
             <br></br>
             <input type="password" placeholder="Enter Your Password" ref={passwordInput}></input>
             <br></br>
             <br></br>
-            <button class="btn btn-outline-primary btn-lg" onClick={login}>Login</button>
+            <button class="btn btn-outline-primary btn-lg display-1" onClick={login}>Login</button>
         </>
     );
 }

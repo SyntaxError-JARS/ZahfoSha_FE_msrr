@@ -6,8 +6,8 @@ export default function CreateMenuItem() {
 
     const itemnameInput = useRef();
     const costInput = useRef();
-    const isSubstitutableInput = useRef();
     const proteinInput = useRef();
+    const isSubstitutableInput = useRef();
 
     const url = "https://zahfosha.azurewebsites.net"
 
@@ -24,7 +24,7 @@ export default function CreateMenuItem() {
             alert("You need to enter a menu item!");
         }
         try{
-            const response = await axios.post(`${url}/menu/createmenuitem` , menuItem )
+            const response = await axios.post(`${url}/menu` , menuItem )
             console.log(response)
             console.log(response.data)
         }catch(error){

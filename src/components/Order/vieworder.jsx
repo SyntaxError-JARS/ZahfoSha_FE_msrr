@@ -21,7 +21,7 @@ export default function ViewOrder() {
                     <td>{e.comment}</td>
                     <td>{String(e.isFavorite)}</td>
                     <td>{e.orderDate}</td>
-                    <td>{e.username}</td>
+                    <td>{e.customerUsername}</td>
                 </tr>
             )
            

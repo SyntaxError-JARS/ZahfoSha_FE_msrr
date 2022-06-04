@@ -4,15 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function CustomerRegistration() {
-    const navigate = useNavigate();
-
-    const fnameInput = useRef();
-    const lnameInput = useRef();
-    const usernameInput = useRef();
-    const passwordInput = useRef();
-    //const balanceInput = useRef();
-    // const isAdmin = false;
-
 
     // const customer = {
             
@@ -22,17 +13,26 @@ export default function CustomerRegistration() {
     //     password: "passwordrobb",
     //     balance:  10,
     //     isAdmin: false
-    // }
+    // };
+    
+    const navigate = useNavigate();
 
     const url = "https://zahfosha.azurewebsites.net"
+
+    const customerUsernameInput = useRef();
+    const fNameInput = useRef();
+    const lNameInput = useRef();
+    const passwordInput = useRef();
+    //const balanceInput = useRef();
+    // const isAdmin = false;
 
     async function customerReg(){
 
         const customer = {
             
-            username: usernameInput.current.value,
-            fname: fnameInput.current.value,
-            lname: lnameInput.current.value,
+            customerUsername: customerUsernameInput.current.value,
+            fName: fNameInput.current.value,
+            lName: lNameInput.current.value,
             password: passwordInput.current.value,
             balance: 0,
             isAdmin: false
@@ -40,40 +40,39 @@ export default function CustomerRegistration() {
 
         if (customer.password === "") {
             alert("You have failed to enter a valid password! Please try again!");
-        if (customer.username === "")
+        if (customer.customerUsername === "")
             alert("You have failed to enter a valid username! Please try again!");
         }else navigate("/customer");
         
         try{
-        const response = await axios.post(`${url}/customer` , customer)
-        // balance = 0;
-        // isAdmin = false;
-        console.log(response)
-        } catch(error){
+            const response = await axios.post(`${url}/customer` , customer)
+            console.log(response.data)
+        } catch (error) {
             console.error(error.response.data)
-            console.log(error)
+            // console.log(error)
+            alert(error.response.data);
         }
     }
 
     return(
         <>
-        <h2>Welcome to Zahfosha!</h2>
-        <h2>Please enter your customer information below to sign up!</h2>
-        <br></br>
-        <input placeholder="Enter Username" ref={usernameInput}></input>
-        <br></br>
-        <br></br>
-        <input placeholder="Enter First Name" ref={fnameInput}></input>
-        <br></br>
-        <br></br>
-        <input placeholder="Enter Last Name" ref={lnameInput}></input>
-        <br></br>
-        <br></br>
-        <input type="password" placeholder="Enter password" ref={passwordInput}></input>
-        <br></br>
-        <br></br>
-        <button type="button" class="btn btn-outline-warning btn-lg" onClick={customerReg}>Register</button>
+            <h2>Welcome to Zahfosha!</h2>
+            <h2>Please enter your customer information below to sign up!</h2>
+            <br></br>
+            <input placeholder="Enter Username" ref={customerUsernameInput}></input>
+            <br></br>
+            <br></br>
+            <input placeholder="Enter First Name" ref={fNameInput}></input>
+            <br></br>
+            <br></br>
+            <input placeholder="Enter Last Name" ref={lNameInput}></input>
+            <br></br>
+            <br></br>
+            <input type="password" placeholder="Enter password" ref={passwordInput}></input>
+            <br></br>
+            <br></br>
+            <button type="button" class="btn btn-outline-warning btn-lg display-1" onClick={customerReg}>Register</button>
         </>
-    )
+    );
 
     }

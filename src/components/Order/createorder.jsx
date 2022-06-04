@@ -9,9 +9,9 @@ export default function CreateOrder() {
     const commentInput = useRef();
     const isFavoriteInput = useRef();
     const orderDateInput = useRef();
-    const usernameInput = useRef();
+    const customerUsernameInput = useRef();
 
-    const url = "https://zahfosha.azurewebsites.net/"
+    const url = "https://zahfosha.azurewebsites.net"
 
     async function addOrder(){
 
@@ -21,9 +21,8 @@ export default function CreateOrder() {
             comment: commentInput.current.value,
             isFavorite: isFavoriteInput.current.value,
             orderDate: orderDateInput.current.value,
-            username: usernameInput.current.value
+            customerUsername: customerUsernameInput.current.value
         }
-
 
         try{
             const response = await axios.post(`${url}/orders` , order )
@@ -35,7 +34,6 @@ export default function CreateOrder() {
         }
 
     }
-
 
     return (
 <>
@@ -50,7 +48,7 @@ export default function CreateOrder() {
         <br></br>
         <input  placeholder="Enter Today's Date" ref={orderDateInput}></input>
         <br></br>
-        <input  placeholder="Please Enter Your Username" ref={usernameInput}></input>
+        <input  placeholder="Please Enter Your Username" ref={customerUsernameInput}></input>
         <br></br>
         <br></br>
         <button class="btn btn-secondary btn-lg" onClick={addOrder}>Create Order</button>
