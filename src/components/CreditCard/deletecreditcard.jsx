@@ -11,12 +11,15 @@ export default function DeleteCreditCard(){
 
     async function deleteCreditCard(){
 
+        const customerUsernameInput = {
+            customerUsername: "Robb"
+        }
+
         // if (creditCardInput === "") {
         //     alert("You have failed to enter a valid credit card number! Please try again!");
 
         try{
-            const response = await axios.delete(`${url}/Creditcard?=${creditCardInput.current.value}` )
-
+            const response = await axios.delete((`${url}/creditcard`, customerUsernameInput))
             console.log(response)
             console.log(response.data)
         }catch (error){
@@ -31,15 +34,9 @@ export default function DeleteCreditCard(){
         <br></br>
         <br></br>
         <h3>Delete Your Credit Card!</h3>
-        <input placeholder="Enter your credit card number" ref={creditCardInput}></input>
+        <input placeholder="Enter your username" ref={creditCardInput}></input>
         <br></br>
-        <br></br>
-        <button class="btn btn-danger btn-lg" onClick={() => { 
-            deleteCreditCard(); 
-            setShowDeleted(!showDelete)
-            }}
-            >Delete Credit Card</button>
-        {showDelete && <p>You Have Successfully Deleted Your Credit Card</p>}
+        <button class="btn btn-danger btn-lg" onClick={deleteCreditCard}>Delete CreditCard</button>
         </>
 
     )

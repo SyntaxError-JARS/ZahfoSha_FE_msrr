@@ -2,66 +2,58 @@ import React from "react";
 import { useRef } from "react";
 import axios from "axios";
 
-export default function MenuUpdate() {
+export default function UpdateMenuItem() {
 
-    const fnameInput = useRef();
-    const lnameInput = useRef();
-    const usernameInput = useRef();
-    const passwordInput = useRef();
-    //const balanceInput = useRef();
-    // const isAdmin = false;
-
-
-    // const menu = {
-            
-    //     fname: "Romane",
-    //     lname: "Robb",
-    //     username: "romanerobb",
-    //     password: "passwordrobb",
-    //     balance:  10,
-    //     isAdmin: false
-    // }
+    const itemnameInput = useRef();
+    const costInput = useRef();
+    const proteinInput = useRef();
+    const isSubstitutableInput = useRef();
 
     const url = "https://zahfosha.azurewebsites.net"
 
-    async function MenuUpdate(){
+    async function updatemenuItems(){
 
-        const menu = {
-            
-            fname: fnameInput.current.value,
-            lname: lnameInput.current.value,
-            username: usernameInput.current.value,
-            password: passwordInput.current.value,
-            balance:  0,
-            isAdmin: false
+        const menuItem = {
+            menuItem: itemnameInput.current.value,
+            cost: costInput.current.value,
+            protein: proteinInput.current.value,
+            isSubstitutable: isSubstitutableInput.current.value,
         }
-        
+
+        if (menuItem.menuItem === "") {
+            alert("You need to enter a menu item!");
+        }
         try{
-        const response = await axios.post(`${url}/menu` , menu)
-        // balance = 0;
-        // isAdmin = false;
-        console.log(response)
-        } catch(error){
+            const response = await axios.post(`${url}/menu` , menuItem )
+            console.log(response)
+            console.log(response.data)
+        }catch(error){
             console.error(error.response.data)
             console.log(error)
         }
+
     }
 
-    return(
+    return (
+    
         <>
-        <h2>Welcome to Zahfosha!</h2>
-        <h2>Please Update The Menu Below!</h2>
-        <br></br>
-        <input placeholder="Enter First Name" ref={fnameInput}></input>
-        <br></br>
-        <input placeholder="Enter Last Name" ref={lnameInput}></input>
-        <br></br>
-        <input placeholder="Enter Username" ref={usernameInput}></input>
-        <br></br>
-        <input type="password" placeholder="Enter password" ref={passwordInput}></input>
+        <h4>Update menu item below!</h4>
+        <input placeholder="What is the item's name?" ref={itemnameInput}></input>
         <br></br>
         <br></br>
-        <button type="button" class="btn btn-outline-secondary" onClick={MenuUpdate}>Log In!</button>
+        <input placeholder="How much does it cost?" ref={costInput}></input>
+        <br></br>
+        <br></br>
+        <input  placeholder="How much protein (in grams) does it contain?" ref={proteinInput}></input>
+        <br></br>
+        <br></br>
+        <input placeholder="Can the item be substitutable?" ref={isSubstitutableInput}></input>
+        <br></br>
+        <br></br>
+        <button class="btn btn-primary btn-lg" onClick={updatemenuItems}>Update Menu Item</button>
         </>
-    )
+        
+        );
+    
+
 }

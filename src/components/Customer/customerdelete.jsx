@@ -12,7 +12,7 @@ export default function CustomerDelete() {
     async function deleteCustomer(){
 
         try{
-            const response = await axios.delete(`${url}/customer/delete-account?username=${customerInput.current.value}` )
+            const response = await axios.delete(`${url}/customer?=${customerInput.current.value}` )
 
             console.log(response)
             console.log(response.data)

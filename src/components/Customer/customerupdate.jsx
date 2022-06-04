@@ -50,19 +50,19 @@ export default function CustomerUpdate() {
         <h2>Welcome to Zahfosha!</h2>
         <h2>Update your customer information below!</h2>
         <br></br>
-        <input placeholder="Enter Username" ref={customerUsernameInput}></input>
+        <input placeholder="Update Username" ref={customerUsernameInput}></input>
         <br></br>
         <br></br>
-        <input placeholder="Enter First Name" ref={fNameInput}></input>
+        <input placeholder="Update First Name" ref={fNameInput}></input>
         <br></br>
         <br></br>
-        <input placeholder="Enter Last Name" ref={lNameInput}></input>
+        <input placeholder="Update Last Name" ref={lNameInput}></input>
         <br></br>
         <br></br>
-        <input type="password" placeholder="Enter password" ref={passwordInput}></input>
+        <input type="password" placeholder="Update password" ref={passwordInput}></input>
         <br></br>
         <br></br>
-        <button type="button" class="btn btn-outline-warning btn-lg" onClick={customerUpdate}>Register</button>
+        <button type="button" class="btn btn-outline-warning btn-lg" onClick={customerUpdate}>Update</button>
         </>
     )
 

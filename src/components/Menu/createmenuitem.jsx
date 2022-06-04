@@ -37,8 +37,7 @@ export default function CreateMenuItem() {
     return (
     
         <>
-        
-        <h3>Hello Admin!<br></br>Add a new menu item below!</h3>
+        <h4>Add a new menu item below!</h4>
         <input placeholder="What is the item's name?" ref={itemnameInput}></input>
         <br></br>
         <br></br>
@@ -52,7 +51,6 @@ export default function CreateMenuItem() {
         <br></br>
         <br></br>
         <button class="btn btn-success btn-lg" onClick={createmenuItems}>Create Menu Item</button>
-
         </>
         
         );

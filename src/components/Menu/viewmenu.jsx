@@ -22,7 +22,7 @@ export default function ViewMenu(){
                     </tr>
                 )
                
-            })
+            });
             setMenuBody(menuItemsTableRows)
             console.log(response)
             console.log(response.data)
@@ -34,7 +34,7 @@ export default function ViewMenu(){
 
     return(
         <>
-        <h3 class="display-1">Our Menu</h3>
+        <h3 class="display-1">Menu</h3>
         <button class="btn btn-secondary btn-lg" onClick={allMenuItems}>Press to see all of the menu items</button>
     <table>
         <thead>
