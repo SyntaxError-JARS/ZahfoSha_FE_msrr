@@ -36,7 +36,7 @@ export default function CustomerLogin() {
                 navigate("/admin");
         } else {
             try {
-                const response = await axios.post(`${url}/customer`, customer);
+                const response = await axios.post(`${url}/login`, customer);
                 console.log(response.data);
                 // console.log("Hey this is the customer prior ", user);
                 // setUser({ ...user, username: customer.username });

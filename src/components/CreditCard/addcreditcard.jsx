@@ -30,7 +30,7 @@ export default function AddCreditCard() {
         }
         
         try{
-        const response = await axios.post(`${url}/creditcard/add` , Credit)
+        const response = await axios.post(`${url}/creditcard` , Credit)
        
         console.log(response)
         } catch(error){

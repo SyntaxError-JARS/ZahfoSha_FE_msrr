@@ -4,16 +4,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function CustomerRegistration() {
-
-    // const customer = {
-            
-    //     fname: "Romane",
-    //     lname: "Robb",
-    //     username: "romanerobb",
-    //     password: "passwordrobb",
-    //     balance:  10,
-    //     isAdmin: false
-    // };
     
     const navigate = useNavigate();
 

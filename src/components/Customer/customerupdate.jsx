@@ -14,16 +14,6 @@ export default function CustomerUpdate() {
     // const isAdmin = false;
 
 
-    // const customer = {
-            
-    //     fName: "Romane",
-    //     lName: "Robb",
-    //     customerUsername: "romanerobb",
-    //     password: "passwordrobb",
-    //     balance:  10,
-    //     isAdmin: false
-    // }
-
     const url = "https://zahfosha.azurewebsites.net"
 
     async function customerUpdate(){

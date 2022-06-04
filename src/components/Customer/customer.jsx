@@ -3,6 +3,7 @@ import AddCreditCard from "../CreditCard/addcreditcard";
 import DeleteCreditCard from "../CreditCard/deletecreditcard";
 import ViewOrder from "../Order/vieworder";
 import CustomerDelete from "./customerdelete";
+import CustomerUpdate from "./customerupdate";
 
 export default function Customer() {
 
@@ -12,6 +13,7 @@ export default function Customer() {
         <h3>Hello! Welcome to Zahfosha.</h3>
 
         <ViewOrder />
+        <CustomerUpdate />
         <AddCreditCard />
         <DeleteCreditCard />
         <CustomerDelete />
