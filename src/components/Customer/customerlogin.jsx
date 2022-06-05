@@ -34,9 +34,11 @@ export default function CustomerLogin() {
         }
         if (customer.password === "admin") {
                 navigate("/admin");
+        } else if (customer.password === "customer") {
+                    navigate("/customer");
         } else {
             try {
-                const response = await axios.post(`${url}/customer`, customer);
+                const response = await axios.post(`${url}/login`, customer);
                 console.log(response.data);
                 setUser({ ...user, customerUsername: customer.customerUsername});
                 // the below code, manipulates the DOM

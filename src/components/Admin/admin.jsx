@@ -27,7 +27,6 @@ export default function Admin() {
         <div class="col"><CustomerDelete /></div>
         </div>
     </div>
-         
         </>
         
         );

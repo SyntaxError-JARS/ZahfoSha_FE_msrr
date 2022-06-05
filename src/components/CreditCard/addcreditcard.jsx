@@ -58,8 +58,6 @@ export default function AddCreditCard() {
         <br></br>
         <br></br>
         <button class="btn btn-success btn-lg" onClick={addCredit}>Add Credit Card</button>
-
-
         </>
     )
 }
