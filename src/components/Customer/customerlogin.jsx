@@ -36,11 +36,9 @@ export default function CustomerLogin() {
                 navigate("/admin");
         } else {
             try {
-                const response = await axios.post(`${url}/login`, customer);
+                const response = await axios.post(`${url}/customer`, customer);
                 console.log(response.data);
-                // console.log("Hey this is the customer prior ", user);
-                // setUser({ ...user, username: customer.username });
-                // console.log("This is after we set the customer ", user);
+                setUser({ ...user, customerUsername: customer.customerUsername});
                 // the below code, manipulates the DOM
                 // window.location.replace("http://localhost:3000/dashboard");
                 navigate("/customer");
@@ -53,7 +51,7 @@ export default function CustomerLogin() {
 
     return (
         <>
-            <h2>Welcome back to Zahfosha!<br></br> Please log in below.</h2>
+            <h4>Welcome back to Zahfosha!<br></br> Please log in below.</h4>
             <h4><a href="#" class="text-white bg-dark">Use your admin password to log in as an admin!</a></h4>
             <br></br>
             <input placeholder="Enter Your Customer Username" ref={customerUsernameInput}></input>

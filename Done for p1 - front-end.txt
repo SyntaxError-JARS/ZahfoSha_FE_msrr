@@ -1,0 +1,5 @@
+_____DONE_____
+Register a customer
+Create a order
+Login as admin
+Add to menu as admin

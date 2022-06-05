@@ -41,7 +41,7 @@ export default function AddCreditCard() {
 
     return(
         <>
-        <h3>Add A Credit Card To Your Account!</h3>
+        <h4>Add A Credit Card To Your Account!</h4>
         <input placeholder="Enter card number" ref={cardNumberInput}></input>
         <br></br>
         <input placeholder="Enter name on card" ref={cardNameInput}></input>

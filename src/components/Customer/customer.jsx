@@ -10,13 +10,21 @@ export default function Customer() {
     return (
     
     <>
-        <h3>Hello! Welcome to Zahfosha.</h3>
+        <h4>Hello! Welcome to Zahfosha.</h4>
 
         <ViewOrder />
-        <CustomerUpdate />
-        <AddCreditCard />
-        <DeleteCreditCard />
-        <CustomerDelete />
+    <div class="container">
+        <div class="row">
+        <div class="col"><CustomerUpdate /></div>
+        <div class="col"><AddCreditCard /></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+        <div class="col"><DeleteCreditCard /></div>
+        <div class="col"><CustomerDelete /></div>
+        </div>
+    </div>
     </>
     
     );

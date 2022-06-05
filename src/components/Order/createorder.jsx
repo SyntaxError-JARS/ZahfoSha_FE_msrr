@@ -40,13 +40,18 @@ export default function CreateOrder() {
         <h3>Please Enter Your Order Below!</h3>
         <input placeholder="Enter ID" ref={idInput}></input>
         <br></br>
+        <br></br>
         <input placeholder="Enter The Menu Item" ref={menuItemInput}></input>
+        <br></br>
         <br></br>
         <input placeholder="Please Enter A Comment" ref={commentInput}></input>
         <br></br>
+        <br></br>
         <input  placeholder="Is This A Favorite Item?" ref={isFavoriteInput}></input>
         <br></br>
+        <br></br>
         <input  placeholder="Enter Today's Date" ref={orderDateInput}></input>
+        <br></br>
         <br></br>
         <input  placeholder="Please Enter Your Username" ref={customerUsernameInput}></input>
         <br></br>

@@ -46,8 +46,7 @@ export default function CustomerRegistration() {
 
     return(
         <>
-            <h2>Welcome to Zahfosha!</h2>
-            <h2>Please enter your customer information below to sign up!</h2>
+            <h4>Please enter your customer information below to sign up!</h4>
             <br></br>
             <input placeholder="Enter Username" ref={customerUsernameInput}></input>
             <br></br>

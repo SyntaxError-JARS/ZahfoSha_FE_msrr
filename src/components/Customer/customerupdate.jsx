@@ -47,8 +47,7 @@ export default function CustomerUpdate() {
 
     return(
         <>
-        <h2>Welcome to Zahfosha!</h2>
-        <h2>Update your customer information below!</h2>
+        <h4>Update your customer information below!</h4>
         <br></br>
         <input placeholder="Update Username" ref={customerUsernameInput}></input>
         <br></br>
@@ -62,7 +61,7 @@ export default function CustomerUpdate() {
         <input type="password" placeholder="Update password" ref={passwordInput}></input>
         <br></br>
         <br></br>
-        <button type="button" class="btn btn-outline-warning btn-lg" onClick={customerUpdate}>Update</button>
+        <button type="button" class="btn btn-warning btn-lg" onClick={customerUpdate}>Update</button>
         </>
     )
 

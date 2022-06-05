@@ -27,7 +27,7 @@ export default function CustomerDelete() {
         <>
         <br></br>
         <br></br>
-        <h3>Delete Your Account!</h3>
+        <h4>Delete Your Account!</h4>
         <input placeholder="Please enter your username" ref={customerInput}></input>
         <br></br>
         <br></br>
