@@ -35,7 +35,7 @@ export default function CustomerLogin() {
         if (customer.password === "admin") {
                 navigate("/admin");
         } else if (customer.password === "customer") {
-                    navigate("/customer");
+                navigate("/customer");
         } else {
             try {
                 const response = await axios.post(`${url}/login`, customer);

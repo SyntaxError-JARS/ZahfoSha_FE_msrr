@@ -3,8 +3,6 @@ import { useRef, useState } from "react"
 
 export default function DeleteCreditCard(){
 
-    const [showDelete, setShowDeleted] = useState(false);
-
     const creditCardInput = useRef();
 
     const url = "https://zahfosha.azurewebsites.net"
@@ -15,10 +13,10 @@ export default function DeleteCreditCard(){
             customerUsername: "Robb"
         }
 
-        // if (creditCardInput === "") {
-        //     alert("You have failed to enter a valid credit card number! Please try again!");
+        if (creditCardInput === "") {
+        alert("You have failed to enter a valid credit card number! Please try again!");
 
-        try{
+        } try{
             const response = await axios.delete((`${url}/creditcard`, customerUsernameInput))
             console.log(response)
             console.log(response.data)

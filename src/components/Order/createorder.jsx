@@ -12,6 +12,7 @@ export default function CreateOrder() {
     const customerUsernameInput = useRef();
 
     const url = "https://zahfosha.azurewebsites.net"
+    // const url = "https://bibimbop.azurewebsites.net"
 
     async function addOrder(){
 

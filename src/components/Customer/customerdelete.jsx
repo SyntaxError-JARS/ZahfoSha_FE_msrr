@@ -1,19 +1,23 @@
 import axios from "axios";
 import { useRef, useState } from "react"
 
-export default function CustomerDelete() {
+export default function DeleteCustomer(){
 
-    const [showDelete, setShowDeleted] = useState(false);
-
-    const customerInput = useRef();
+    const customerDeleteInput = useRef();
 
     const url = "https://zahfosha.azurewebsites.net"
 
     async function deleteCustomer(){
 
-        try{
-            const response = await axios.delete(`${url}/customer?=${customerInput.current.value}` )
+        const customerUsernameInput = {
+            customerUsername: "Robb"
+        }
 
+        if (customerDeleteInput === "") {
+        alert("You have failed to enter a valid credit card number! Please try again!");
+
+        } try{
+            const response = await axios.delete((`${url}/customer`, customerUsernameInput))
             console.log(response)
             console.log(response.data)
         }catch (error){
@@ -27,16 +31,11 @@ export default function CustomerDelete() {
         <>
         <br></br>
         <br></br>
-        <h4>Delete Your Account!</h4>
-        <input placeholder="Please enter your username" ref={customerInput}></input>
+        <h4>Delete Your Credit Card!</h4>
+        <input placeholder="Enter your username" ref={customerDeleteInput}></input>
         <br></br>
         <br></br>
-        <button class="btn btn-danger btn-lg" onClick={() => { 
-            deleteCustomer(); 
-            setShowDeleted(!showDelete) 
-            }}
-            >Delete Account</button>
-        {showDelete && <p>You Have Successfully Deleted Your Account!</p>}
+        <button class="btn btn-danger btn-lg" onClick={deleteCustomer}>Delete Customer</button>
         </>
 
     )

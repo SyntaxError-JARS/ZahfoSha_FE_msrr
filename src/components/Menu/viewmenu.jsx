@@ -5,7 +5,8 @@ export default function ViewMenu(){
 
     const [menuBody, setMenuBody] = useState();
 
-    const url = "https://zahfosha.azurewebsites.net"
+    // const url = "https://zahfosha.azurewebsites.net"
+    const url = "http://localhost:8080/zahfosha/"
     
         async function allMenuItems(){
     

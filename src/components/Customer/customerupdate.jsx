@@ -13,7 +13,6 @@ export default function CustomerUpdate() {
     //const balanceInput = useRef();
     // const isAdmin = false;
 
-
     const url = "https://zahfosha.azurewebsites.net"
 
     async function customerUpdate(){

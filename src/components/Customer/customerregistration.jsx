@@ -8,6 +8,7 @@ export default function CustomerRegistration() {
     const navigate = useNavigate();
 
     const url = "https://zahfosha.azurewebsites.net"
+    // const url = "https://bibimbop.azurewebsites.net"
 
     const customerUsernameInput = useRef();
     const fNameInput = useRef();
@@ -60,10 +61,10 @@ export default function CustomerRegistration() {
             <input type="password" placeholder="Enter password" ref={passwordInput}></input>
             <br></br>
             <br></br>
-            <input type="password" placeholder="Enter balance" ref={balanceInput}></input>
+            <input placeholder="Enter balance" ref={balanceInput}></input>
             <br></br>
             <br></br>
-            <input type="password" placeholder="isAdmin" ref={isAdminInput}></input>
+            <input placeholder="isAdmin" ref={isAdminInput}></input>
             <br></br>
             <br></br>
             <button type="button" class="btn btn-outline-warning btn-lg display-1" onClick={customerReg}>Register</button>
