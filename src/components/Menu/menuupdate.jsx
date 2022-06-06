@@ -24,7 +24,7 @@ export default function UpdateMenuItem() {
             alert("You need to enter a menu item!");
         }
         try{
-            const response = await axios.post(`${url}/menu` , menuItem )
+            const response = await axios.put(`${url}/menu` , menuItem )
             console.log(response)
             console.log(response.data)
         }catch(error){

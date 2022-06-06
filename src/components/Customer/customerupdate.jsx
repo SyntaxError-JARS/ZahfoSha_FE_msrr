@@ -34,7 +34,7 @@ export default function CustomerUpdate() {
         }else navigate("/customer");
         
         try{
-        const response = await axios.post(`${url}/customer` , customer)
+        const response = await axios.put(`${url}/customer` , customer)
         // balance = 0;
         // isAdmin = false;
         console.log(response)

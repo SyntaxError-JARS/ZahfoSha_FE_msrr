@@ -1,25 +1,27 @@
 import axios from "axios";
 import { useRef, useState } from "react"
+import { Navigate } from "react-router-dom";
 
 export default function DeleteCustomer(){
 
-    const customerDeleteInput = useRef();
+   const url = "https://zahfosha.azurewebsites.net"
 
-    const url = "https://zahfosha.azurewebsites.net"
+   const customerUsernameInput = useRef();
 
     async function deleteCustomer(){
 
-        const customerUsernameInput = {
-            customerUsername: "Robb"
+        const user = {
+            username: customerUsernameInput.current.value
         }
 
-        if (customerDeleteInput === "") {
-        alert("You have failed to enter a valid credit card number! Please try again!");
+        if (customerUsernameInput === "") {
+        alert("You have failed to enter a valid customer username! Please try again!");
 
         } try{
-            const response = await axios.delete((`${url}/customer`, customerUsernameInput))
+            const response = await axios.delete((`${url}/customer?username=${customerUsernameInput.current.value}`, user))
             console.log(response)
             console.log(response.data)
+            Navigate("/");
         }catch (error){
             console.error(error.response.data)
             console.error(error)
@@ -31,8 +33,8 @@ export default function DeleteCustomer(){
         <>
         <br></br>
         <br></br>
-        <h4>Delete Your Credit Card!</h4>
-        <input placeholder="Enter your username" ref={customerDeleteInput}></input>
+        <h4>Delete Your Account!</h4>
+        <input placeholder="Enter your username" ref={customerUsernameInput}></input>
         <br></br>
         <br></br>
         <button class="btn btn-danger btn-lg" onClick={deleteCustomer}>Delete Customer</button>

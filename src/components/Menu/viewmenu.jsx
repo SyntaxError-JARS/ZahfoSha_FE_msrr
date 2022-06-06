@@ -5,30 +5,52 @@ export default function ViewMenu(){
 
     const [menuBody, setMenuBody] = useState();
 
-    // const url = "https://zahfosha.azurewebsites.net"
-    const url = "http://localhost:8080/zahfosha/"
+    const url = "https://zahfosha.azurewebsites.net"
+    // const url = "http://localhost:8080/zahfosha/"
     
-        async function allMenuItems(){
+    //     async function allMenuItems(){
     
-            try{
-            const response = await axios.get(`${url}/menu`)
-            const menus = await response.data;
-            const menuItemsTableRows = menus.map((e) => {
+    //         try{
+    //         const response = await axios.get(`${url}/menu`)
+    //         const menus = await response.data;
+    //         const menuItemsTableRows = menus.map((e) => {
+    //             return (
+    //                 <tr>
+    //                     <td>{e.menuItem}</td>
+    //                     <td>{e.cost}</td>
+    //                     <td>{e.protein}</td>
+    //                     <td>{String(e.isSubstitutable)}</td>
+    //                 </tr>
+    //             )
+               
+    //         });
+    //         setMenuBody(menuItemsTableRows)
+    //         console.log(response)
+    //         console.log(response.data)
+    //     } catch (e) {
+    //         console.error(e)
+    //     }
+    // }
+
+    async function allMenuItems() {
+        try {
+            const response = await fetch(`${url}/menu`);
+            const menu = await response.json();
+            const menuTableRows = menu.map((e) => {
                 return (
                     <tr>
                         <td>{e.menuItem}</td>
                         <td>{e.cost}</td>
                         <td>{e.protein}</td>
-                        <td>{String(e.isSubstitutable)}</td>
+                        <td>{e.isSubstitutable}</td>
                     </tr>
-                )
-               
+                );
             });
-            setMenuBody(menuItemsTableRows)
-            console.log(response)
-            console.log(response.data)
+
+            setMenuBody(menuTableRows);
+            console.log(menu);
         } catch (e) {
-            console.error(e)
+            console.error(e);
         }
     }
 
@@ -40,10 +62,10 @@ export default function ViewMenu(){
     <table>
         <thead>
             <tr>
-                <th>Item Name</th>
-                <th>Cost</th>
-                <th>Protein</th>
-                <th>Is isSubstitutable</th>
+                <th>menuItem</th>
+                <th>cost</th>
+                <th>protein</th>
+                <th>isSubstitutable</th>
             </tr>
         </thead>
         <tbody>{menuBody}</tbody>
